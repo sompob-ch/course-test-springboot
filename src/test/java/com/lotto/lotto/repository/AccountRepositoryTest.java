@@ -23,7 +23,21 @@ public class AccountRepositoryTest {
         newAccount.setPassword("pass");
         newAccount.setSalary(100);
         Account actualAccount = accountRepository.save(newAccount);
-        assertEquals(1, actualAccount.getId());
+
+        assertTrue(actualAccount.getId() > 0);
         assertEquals(1, accountRepository.count());
+    }
+
+    @Test
+    public void createNewAccount2(){
+        Account newAccount = new Account();
+        newAccount.setUserName("Sompob");
+        newAccount.setPassword("pass");
+        newAccount.setSalary(100);
+        Account newAccount2 = new Account();
+        accountRepository.save(newAccount);
+        accountRepository.save(newAccount2);
+
+        assertEquals(2, accountRepository.count());
     }
 }
