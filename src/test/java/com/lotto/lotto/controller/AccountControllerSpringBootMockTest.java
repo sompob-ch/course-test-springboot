@@ -41,11 +41,11 @@ public class AccountControllerSpringBootMockTest {
                                 .accept(MediaType.APPLICATION_JSON)
         ).andReturn().getResponse();
 
-        assertEquals(HttpStatus.OK.value(), response.getStatus());
+        assertEquals("For message error EX. Status should 200", HttpStatus.OK.value(), response.getStatus());
 
         AccountResponse expected
                 = new AccountResponse("user","pass",1000);
-        assertEquals(jsonTester.write(expected).getJson(),
+        assertEquals("XXX", jsonTester.write(expected).getJson(),
                 response.getContentAsString());
     }
 }
