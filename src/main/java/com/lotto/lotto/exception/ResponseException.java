@@ -7,8 +7,13 @@ public class ResponseException {
     private String message;
     private Date date = new Date(System.currentTimeMillis());
 
+
+
     public ResponseException(String message) {
         this.message = message;
+    }
+
+    public ResponseException() {
     }
 
     public String getMessage() {
