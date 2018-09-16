@@ -27,7 +27,7 @@ public class AccountControllerTest {
                     .getForEntity("/account/1"
                             , AccountResponse.class);
         assertEquals(HttpStatus.OK, result.getStatusCode());
-        AccountResponse expected = new AccountResponse("user","pass",1000);
+        AccountResponse expected = new AccountResponse("fakeuser","fakepaass",0);
         assertEquals(expected, result.getBody());
     }
 }
